@@ -2,20 +2,50 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Card, CardTitle, CardText} from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import './EmailSplashStyle.scss';
 
-let cardStyle = {
-  'box-shadow': 'pink 100px 1px 6px'
+import {marginGenerator, paddingGenerator} from '../utils/styleObjGenerators.js';
+
+  // let bgColor = '0, 31, 62, ';
+const getBackgroundStyle = (opacity) => {
+  let bgColor = '10, 31, 62, ';
+  if (!opacity) {
+    return 'rgba(' + bgColor + 1.0 + ')';
+  } else {
+    return 'rgba(' + bgColor + opacity + ')';
+  }
 }
+
+let cardStyle = {
+  // 'boxShadow': getBackgroundStyle('.2') + ' 100px 1px 6px',
+  'boxShadow': '3px 3px 20px 1px rgba(255,255,255,.8)',
+  'borderRadius': '.8em',
+  'width': '50%',
+  'overflow': 'hidden'
+}
+
+let flexStyle = {
+  'display': 'flex',
+  'justifyContent': 'center',
+  'alignItems': 'center',
+  'width': '100vw',
+  'height': '100vh',
+  'backgroundColor': getBackgroundStyle()
+}
+
+
+let marginStyle = marginGenerator('0px', '0px', '2.5em', '0px');
+let paddingStyle = paddingGenerator('24px',  null, '16px', null);
 
 class EmailSplash extends Component {
   constructor(props) {
     super(props);
 
     this.state = {};
-
-    //attach bound functions here
+        //attach bound functions here
     //this.func = this.func.bind(this)
     this.handleChange = this.handleChange.bind(this);
   }
@@ -27,49 +57,55 @@ class EmailSplash extends Component {
 
   render() {
     return (
-      <div className="splashBackground">
+      <div className="splashBackground" style={flexStyle}>
         <Card className="emailSignUp" style={cardStyle}>
-          <CardTitle title="cashgrounds" subtitle="compete. survive. win cash!" className="signupHeader" />
-          <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+          <CardTitle title="cashgrounds" subtitle="outwit. outlast. win cash!" className="signupHeader" style={{...paddingStyle, 'background-color': 'rgba(0, 0, 0, .3)', 'overflow': 'hidden'}} subtitleStyle={marginGenerator('0.75em')}/>
+          <CardText>
+            <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
-            <div id="mergeTable" className="mergeTable row">
+              <div className="row" style={marginStyle}>
 
-              <div className="mergeRow dojoDndItem mergeRow-email emailFormInputperformance col-sm-6" id="mergeRow-0">
-                <div className="input-field">
-                  <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25" type="email" className="validate"></input>
-                  <label htmlFor="MERGE0">Email Address <span className="req asterisk">*</span></label>
+                <div className="col-xs-12">
+                  <TextField
+                  hintText="email"
+                  floatingLabelText="email address"
+                  type="email"
+                  autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
+                  /><br />
                 </div>
-              </div>
 
-              <div className="mergeRow dojoDndItem mergeRow-text emailFormInputperformance col-sm-6" id="mergeRow-1">
-                <label htmlFor="MERGE1">Gamer Name</label>
-                <div className="field-group">
-                  <input type="text" name="MERGE1" id="MERGE1" size="25"></input>
+                <div className="col-xs-12">
+                  <TextField
+                    hintText="what do you go by?"
+                    floatingLabelText="gamer name"
+                    name="GAMERNAME"
+                    type="text"
+                  /><br />
                 </div>
+
               </div>
 
-              <div className="input-field col-md-6">
-               <input placeholder="Placeholder" id="first_name" type="text" className="validate"></input>
-               <label htmlFor="first_name">First Name</label>
-              </div>
+              <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
+              <input type="hidden" name="id" value="c29285afce"></input>
 
-            </div>
+              <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
 
-            <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
-            <input type="hidden" name="id" value="c29285afce"></input>
+              <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
+              <input type="hidden" name="mc_signupsource" value="hosted"></input>
 
-
-            <div className="submit_container clear">
-              <input type="submit" className="button" name="submit" value="Subscribe to list"></input>
-            </div>
-            <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
-            <input type="hidden" name="mc_signupsource" value="hosted"></input>
-        </form>
+            </form>
+          </CardText>
       </Card>
     </div>
     );
  }
 }
+
+//RIPPED OUT FROM MAILCHIMP TEMPLAET
+// <div className="input-field">
+//   <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25" type="email" className="validate"></input>
+//   <label htmlFor="MERGE0">Email Address <span className="req asterisk">*</span></label>
+// </div>
 
 // EXAMPLE
 const mapState = state => {

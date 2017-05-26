@@ -28,6 +28,13 @@ module.exports = {
         'css-loader',
         'sass-loader'
       ]
+    },
+    {
+      test: /\.css$/,
+      include: /flexboxgrid/,
+      use: [
+        'css-loader'
+      ]
     }
   ]
   },

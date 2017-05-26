@@ -10,6 +10,7 @@ import App from './app.js';
 
 //load main css
 import './public/stylesheets/index.scss';
+import 'flexboxgrid';
 
 injectTapEventPlugin();
 
