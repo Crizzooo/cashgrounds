@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Card, CardTitle, CardText} from 'material-ui/Card';
+import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -59,7 +59,14 @@ class EmailSplash extends Component {
     return (
       <div className="splashBackground" style={flexStyle}>
         <Card className="emailSignUp" style={cardStyle}>
-          <CardTitle title="cashgrounds" subtitle="outwit. outlast. win cash!" className="signupHeader" style={{...paddingStyle, 'background-color': 'rgba(0, 0, 0, .3)', 'overflow': 'hidden'}} subtitleStyle={marginGenerator('0.75em')}/>
+          <CardMedia overlay={<CardTitle title={
+              (
+                <b>cash
+                  <img style={
+                      {"maxHeight": "75px", "marginTop": "-100px"
+          }}src="/assets/cashgroundsTakeFour.png"></img>grounds</b>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}} >
+            <img id="test" src="http://www.hdwallpaper.nu/wp-content/uploads/2017/04/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712.jpg"></img>
+          </CardMedia>
           <CardText>
             <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
@@ -100,7 +107,10 @@ class EmailSplash extends Component {
     );
  }
 }
-
+//Ripped out old html
+/*
+          <CardTitle title="cashgrounds" subtitle="outwit. outlast. win cash!" className="signupHeader" style={{...paddingStyle, 'backgroundColor': 'rgba(0, 0, 0, .3)', 'overflow': 'hidden'}} subtitleStyle={marginGenerator('0.75em')}/>
+          */
 //RIPPED OUT FROM MAILCHIMP TEMPLAET
 // <div className="input-field">
 //   <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25" type="email" className="validate"></input>
