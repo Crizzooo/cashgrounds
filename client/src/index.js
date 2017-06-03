@@ -17,15 +17,14 @@ injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
   'palette': {
-    'primary1Color': 'gold',
+    'primary1Color': '#F7F459',
     //primary2, primary3, accent1,2,3, borderColor
-    'textColor': 'black',
+    'textColor': 'silver',
     'alternateTextColor': 'white',
-    'disabledColor': 'grey',
+    'disabledColor': '#303333',
     'borderColor': 'gold'
   },
   'raisedButton': {
-    'textColor': 'pink',
     'primaryTextColor': '#111111'
   }
 });

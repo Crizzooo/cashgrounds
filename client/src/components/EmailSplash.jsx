@@ -35,6 +35,17 @@ let flexStyle = {
   'height': '100vh'
 }
 
+let imageSources = {
+  old: "http://www.hdwallpaper.nu/wp-content/uploads/2017/04/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712.jpg",
+  new: '/assets/pubgSplash.jpg'
+}
+
+const copy = {
+  subtitle: {
+    main: "Cash Matches, Tournaments, and Leagues for competitive PUBG players",
+    alternate:  "increase the adrenaline rush of the world's most intense video game by competing for cash"
+  }
+}
 
 let marginStyle = marginGenerator('0px', '0px', '2.5em', '0px');
 let paddingStyle = paddingGenerator('24px',  null, '16px', null);
@@ -62,13 +73,19 @@ class EmailSplash extends Component {
                       {"maxHeight": "75px", "display": "block", ...marginStyle}
                   } src="/assets/cashgroundsTakeFour.png">
                   </img>
-                  <b>cashgrounds</b>
-          </div>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}}>
-            <img id="test" src="http://www.hdwallpaper.nu/wp-content/uploads/2017/04/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712.jpg"></img>
+                  <b className="signupBrandName yellowText">CASHGROUNDS</b>
+          </div>)} subtitle={copy.subtitle.alternate} />} overlayStyle={{}} style={{}}>
+            <img className="signupHeaderImg" src="/assets/pubgSplash.jpg"></img>
           </CardMedia>
           <CardText actAsExpander={true} showExpandableButton={true} style={{"background-color":"#111111"}}>
-            <div className="signUpMarketingTab"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem. Etiam vitae eros vitae tellus suscipit egestas non nec turpis. Phasellus at arcu et nunc faucibus accumsan non vel ipsum. Etiam eu sagittis tellus. In tristique malesuada euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              <h4>click for more</h4></div>
+            <div className="signUpMarketingTab"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p><ul>
+              <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
+              </li>
+              <li>
+              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </li>
+            </ul>
+              <h4 className="yellowText">click for more</h4></div>
           </CardText>
           <CardText expandable={true}>
             <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
