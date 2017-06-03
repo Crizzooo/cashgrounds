@@ -32,8 +32,7 @@ let flexStyle = {
   'justifyContent': 'center',
   'alignItems': 'center',
   'width': '100vw',
-  'height': '100vh',
-  'backgroundColor': getBackgroundStyle()
+  'height': '100vh'
 }
 
 
@@ -43,10 +42,7 @@ let paddingStyle = paddingGenerator('24px',  null, '16px', null);
 class EmailSplash extends Component {
   constructor(props) {
     super(props);
-
     this.state = {};
-        //attach bound functions here
-    //this.func = this.func.bind(this)
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -56,15 +52,18 @@ class EmailSplash extends Component {
   }
 
   render() {
+    let marginStyle = marginGenerator('-62px', 'auto', null, 'auto')
     return (
       <div className="splashBackground" style={flexStyle}>
         <Card className="emailSignUp" style={cardStyle}>
           <CardMedia overlay={<CardTitle title={
-              (
-                <b>cash
+              (<div>
                   <img style={
-                      {"maxHeight": "75px", "marginTop": "-100px"
-          }}src="/assets/cashgroundsTakeFour.png"></img>grounds</b>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}} >
+                      {"maxHeight": "75px", "display": "block", ...marginStyle}
+                  } src="/assets/cashgroundsTakeFour.png">
+                  </img>
+                  <b>cashgrounds</b>
+              </div>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}} >
             <img id="test" src="http://www.hdwallpaper.nu/wp-content/uploads/2017/04/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712.jpg"></img>
           </CardMedia>
           <CardText>
@@ -111,6 +110,7 @@ class EmailSplash extends Component {
 /*
           <CardTitle title="cashgrounds" subtitle="outwit. outlast. win cash!" className="signupHeader" style={{...paddingStyle, 'backgroundColor': 'rgba(0, 0, 0, .3)', 'overflow': 'hidden'}} subtitleStyle={marginGenerator('0.75em')}/>
           */
+
 //RIPPED OUT FROM MAILCHIMP TEMPLAET
 // <div className="input-field">
 //   <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25" type="email" className="validate"></input>

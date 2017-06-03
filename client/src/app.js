@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import EmailSplash from './components/EmailSplash';
 
 const App = () => (
-  <div>
+  <div className="background">
     <EmailSplash />
   </div>
 );
