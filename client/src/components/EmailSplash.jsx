@@ -23,7 +23,7 @@ let cardStyle = {
   // 'boxShadow': getBackgroundStyle('.2') + ' 100px 1px 6px',
   'boxShadow': '3px 3px 20px 1px rgba(255,255,255,.8)',
   'borderRadius': '.8em',
-  'width': '50%',
+  'width': '60%',
   'overflow': 'hidden'
 }
 
@@ -56,17 +56,21 @@ class EmailSplash extends Component {
     return (
       <div className="splashBackground" style={flexStyle}>
         <Card className="emailSignUp" style={cardStyle}>
-          <CardMedia overlay={<CardTitle title={
+          <CardMedia actAsExpander={true} showExpandableButton={true} overlay={<CardTitle title={
               (<div>
                   <img style={
                       {"maxHeight": "75px", "display": "block", ...marginStyle}
                   } src="/assets/cashgroundsTakeFour.png">
                   </img>
                   <b>cashgrounds</b>
-              </div>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}} >
+          </div>)} subtitle="overlay subtitle" />} overlayStyle={{}} style={{}}>
             <img id="test" src="http://www.hdwallpaper.nu/wp-content/uploads/2017/04/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712.jpg"></img>
           </CardMedia>
-          <CardText>
+          <CardText actAsExpander={true} showExpandableButton={true} style={{"background-color":"#111111"}}>
+            <div className="signUpMarketingTab"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem. Etiam vitae eros vitae tellus suscipit egestas non nec turpis. Phasellus at arcu et nunc faucibus accumsan non vel ipsum. Etiam eu sagittis tellus. In tristique malesuada euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <h4>click for more</h4></div>
+          </CardText>
+          <CardText expandable={true}>
             <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
               <div className="row" style={marginStyle}>

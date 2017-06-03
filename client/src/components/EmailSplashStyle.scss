@@ -21,7 +21,15 @@ $emailSignUp-height: 45vh;
   font-family: Roboto !important;
   font-weight: 400;
   position:relative;
+  background-color: #111111 !important;
   // box-shadow: 30px 10px 10px 1px rgba(255,255,255,.8);
+}
+
+.signUpMarketingTab {
+  font-family: Helvetica !important;
+  color: #DDDDDD;
+  font-size: 1.2em;
+  line-height: 1.45em;
 }
 
 // .emailSignUp:before, .emailSignUp:after {
