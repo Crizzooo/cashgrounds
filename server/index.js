@@ -3,6 +3,7 @@ const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 
+console.log('p.e.port: ', process.env.PORT);
 const PORT = process.env.PORT || 3000;
 
 
