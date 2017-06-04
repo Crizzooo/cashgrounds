@@ -19,8 +19,8 @@ const muiTheme = getMuiTheme({
   'palette': {
     'primary1Color': '#F7F459',
     //primary2, primary3, accent1,2,3, borderColor
-    'textColor': 'silver',
-    'alternateTextColor': 'white',
+    'textColor': '#AAA',
+    'alternateTextColor': '#FFF',
     'disabledColor': '#676666',
     'borderColor': '#F7F459'
   },
@@ -28,7 +28,6 @@ const muiTheme = getMuiTheme({
     'primaryTextColor': '#111'
   }
 });
-console.log('muiTheme: ', muiTheme);
 
 //more on custom themes: https://github.com/callemall/material-ui/blob/master/src/styles/getMuiTheme.js
 /* raisedButton: {

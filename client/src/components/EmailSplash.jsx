@@ -21,7 +21,7 @@ const getBackgroundStyle = (opacity) => {
 
 let cardStyle = {
   // 'boxShadow': getBackgroundStyle('.2') + ' 100px 1px 6px',
-  'boxShadow': '3px 3px 20px 1px rgba(0,0,0,.8)',
+  'boxShadow': '3px 3px 20px 1px rgba(0,0,0,.8)'
   // 'overflow': 'hidden'
 }
 
@@ -83,17 +83,17 @@ class EmailSplash extends Component {
                     <span
                     className="col-sm-offset-1 col-sm-10 ">{copy.subtitle.alternate}</span>
                   </div>)}
-                subtitleStyle={{"font-family": "myriadPro", "fontSize": ".7em"}}/>}
+                subtitleStyle={{"fontFamily": "myriadPro", "fontSize": ".7em"}}/>}
                 style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
                 mediaStyle={{"height":"100%", "width":"100%"}}
                 className="emailCardMedia">
                 <div className="signupHeaderImg"></div>
             </CardMedia>
-            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "padding-bottom":"0px", "height":"33%", "overflow":"hidden"}}>
+            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"33%", "overflow":"hidden"}}>
               <div className="col-xs-12 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8 signUpMarketingTab">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
                 <div className="row">
-                  <ul className="col-xs-offset-1 col-xs-11" style={{"text-align":"left", }}>
+                  <ul className="col-xs-offset-1 col-xs-11" style={{"textAlign":"left", }}>
                     <br></br>
                     <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
                     </li>
