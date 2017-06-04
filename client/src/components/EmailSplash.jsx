@@ -21,8 +21,7 @@ const getBackgroundStyle = (opacity) => {
 
 let cardStyle = {
   // 'boxShadow': getBackgroundStyle('.2') + ' 100px 1px 6px',
-  'boxShadow': '3px 3px 20px 1px rgba(255,255,255,.8)',
-  'borderRadius': '.8em'
+  'boxShadow': '3px 3px 20px 1px rgba(0,0,0,.8)',
   // 'overflow': 'hidden'
 }
 
