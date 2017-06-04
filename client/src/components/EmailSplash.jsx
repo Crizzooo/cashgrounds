@@ -98,7 +98,7 @@ class EmailSplash extends Component {
                     <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. arius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                     </li>
                     <li>
                     Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -124,21 +124,23 @@ class EmailSplash extends Component {
 
                 <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-3 ">
                     <TextField
                     hintText="email"
                     floatingLabelText="email address"
                     type="email"
                     autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
+                    style={{"maxWidth": "256px", "width":"100%"}}
                     /><br />
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-12 col-sm-offset-0 col-sm-5 col-md-offset-2 col-md-3 ">
                     <TextField
                       hintText="what do you go by?"
                       floatingLabelText="gamer name"
                       name="GAMERNAME"
                       type="text"
+                      style={{"maxWidth": "256px", "width":"100%"}}
                     /><br />
                   </div>
 
