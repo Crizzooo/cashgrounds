@@ -61,7 +61,7 @@ class EmailSplash extends Component {
   }
 
   render() {
-    let marginStyle = marginGenerator('-62px', 'auto', null, 'auto')
+    let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
     return (
       <div className="splashBackground" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
@@ -73,7 +73,7 @@ class EmailSplash extends Component {
                 <CardTitle title={
                 (<div>
                     <img style={
-                        {"maxHeight": "75px", "display": "block", ...marginStyle}
+                        {"height": "20%", "maxHeight": "100px", "display": "block", ...marginStyle}
                     } src="/assets/cashgroundsTakeFour.png">
                     </img>
                     <span className="signupBrandName yellowText">CASHGROUNDS</span>
@@ -89,37 +89,35 @@ class EmailSplash extends Component {
                 className="emailCardMedia">
                 <div className="signupHeaderImg"></div>
             </CardMedia>
-            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"33%", "overflow":"hidden"}}>
+            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
               <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
+                  <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?
+                  If you think you got the nerves of steel necessary to fight the intense stress of competition, betting on yourself will only improve your experience of an already extreme game. The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
                 <div className="row">
                   <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
                     <br></br>
-                    <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
+                    <li>Quick, safe, fast transactions using Paypall, Skrilla, or Dwolla
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. arius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      Different game modes supporting various playstyles, solo matches, series tournaments, and seasonal leagues!
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Achievements, awards, and bonuses available for the most competitive players!
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Perks to early adopters, i.e free squad tournament entries
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Solo, Duo, Team Play - the ultimate stop for competitive pubg players
                     </li>
                     <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </li>
-                    <li>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Different payout scehemes supporting all risk tolerances - prizes rewarding 33x entry fee, some payout so players make their money back as early as the 66th percentile
                     </li>
                   </ul>
                 </div>
               </div>
             </CardText>
-            <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"33%"}}>
+            <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
               <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
                 <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
