@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "webpack --config webpack.dev.config.js -w  & nodemon server/index.js --watch server",
-    "start-prod": "webpack -p --config ./webpack.prod.config.js --progress && node server/index.js",
+    "start-prod": "node server/index.js",
     "postinstall": "npm rebuild node-sass",
-    "heroku-postbuild": "npm rebuild && npm run start-prod"
+    "heroku-postbuild": "npm rebuild node-sass && webpack -p --config ./webpack.prod.config.js"
   },
   "author": "",
   "license": "ISC",
