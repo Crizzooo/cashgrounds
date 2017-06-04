@@ -64,8 +64,8 @@ class EmailSplash extends Component {
     let marginStyle = marginGenerator('-62px', 'auto', null, 'auto')
     return (
       <div className="splashBackground" style={flexStyle}>
-        <div className="row">
-          <Card className="col-xs-offset-1 col-xs-10 emailCard" style={{...cardStyle}}
+        <div className="row" style={{"height":"100%", "width":"100%"}}>
+          <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
             containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"hidden"}}
             >
             <CardMedia
@@ -90,10 +90,10 @@ class EmailSplash extends Component {
                 <div className="signupHeaderImg"></div>
             </CardMedia>
             <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"33%", "overflow":"hidden"}}>
-              <div className="col-xs-12 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8 signUpMarketingTab">
+              <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
                 <div className="row">
-                  <ul className="col-xs-offset-1 col-xs-11" style={{"textAlign":"left", }}>
+                  <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
                     <br></br>
                     <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
                     </li>
