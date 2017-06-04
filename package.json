@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w & nodemon server/index.js --watch server",
-    "start-prod": "npm rebuild node-sass & webpack & npm run start"
+    "start-prod": "npm rebuild node-sass --force && webpack && npm run start",
+    "heroku-postbuild": "npm run start-prod"
   },
   "author": "",
   "license": "ISC",
