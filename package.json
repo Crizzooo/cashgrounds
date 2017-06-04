@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "webpack --config webpack.dev.config.js -w  & nodemon server/index.js --watch server",
     "start-prod": "webpack -p --config ./webpack.prod.config.js --progress && node server/index.js",
-    "heroku-postbuild": "npm run start-prod"
+    "heroku-postbuild": "npm run update && npm run start-prod"
   },
   "engines": {
     "node": "7.4.0"
