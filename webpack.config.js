@@ -1,7 +1,7 @@
 var path = require('path');
 
 var plugins = [];
-if !(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
   var LiveReloadPlugin = require('webpack-livereload-plugin');
   plugins.push(new LiveReloadPlugin({appendScriptTag: true}));
 }
