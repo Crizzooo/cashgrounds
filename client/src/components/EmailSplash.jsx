@@ -67,32 +67,37 @@ class EmailSplash extends Component {
     return (
       <div className="splashBackground" style={flexStyle}>
         <Card className="emailSignUp" style={cardStyle}>
-          <CardMedia actAsExpander={true} showExpandableButton={true} overlay={<CardTitle title={
+          <CardMedia overlay={<CardTitle title={
               (<div>
                   <img style={
                       {"maxHeight": "75px", "display": "block", ...marginStyle}
                   } src="/assets/cashgroundsTakeFour.png">
                   </img>
-                  <b className="signupBrandName yellowText">CASHGROUNDS</b>
-          </div>)} subtitle={copy.subtitle.alternate} />} overlayStyle={{}} style={{}}>
+                  <span className="signupBrandName yellowText">CASHGROUNDS</span>
+          </div>)} subtitle={(<div className="row"><span className="col-sm-offset-1 col-sm-10">{copy.subtitle.alternate}</span></div>)} subtitleStyle={{"font-family": "myriadPro", "fontSize": ".7em"}}/>}>
             <img className="signupHeaderImg" src="/assets/pubgSplash.jpg"></img>
           </CardMedia>
-          <CardText actAsExpander={true} showExpandableButton={true} style={{"background-color":"#111111"}}>
-            <div className="signUpMarketingTab"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p><ul>
-              <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
-              </li>
-              <li>
-              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              </li>
-            </ul>
-              <h4 className="yellowText">click for more</h4></div>
+          <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "padding-bottom":"0px"}}>
+            <div className="col-xs-12 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8 signUpMarketingTab">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
+              <div className="row">
+                <ul className="col-xs-offset-1 col-xs-11" style={{"text-align":"left"}}>
+                  <br></br>
+                  <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
+                  </li>
+                  <li>
+                  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </li>
+                </ul>
+              </div>
+            </div>  
           </CardText>
-          <CardText expandable={true}>
+          <CardText style={paddingGenerator('0px', '0px', '0px', '0px')}>
             <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
-              <div className="row" style={marginStyle}>
+              <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
-                <div className="col-xs-12">
+                <div className="col-xs-6">
                   <TextField
                   hintText="email"
                   floatingLabelText="email address"
@@ -101,7 +106,7 @@ class EmailSplash extends Component {
                   /><br />
                 </div>
 
-                <div className="col-xs-12">
+                <div className="col-xs-6">
                   <TextField
                     hintText="what do you go by?"
                     floatingLabelText="gamer name"

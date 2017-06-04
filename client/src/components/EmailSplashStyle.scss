@@ -12,6 +12,7 @@ $emailSignUp-height: 45vh;
   // padding-top: calc( (100vh - #{$emailSignUp-height}) / 2);
   color: white;
   background-image: linear-gradient(to bottom right, rgba(14, 19, 22, 0.7), rgba(3, 3, 3, 0.6)), url('/assets/metalTile.jpg');
+  overflow: scroll;
 }
 
 .emailSignUp {
@@ -55,10 +56,11 @@ $emailSignUp-height: 45vh;
 }
 
 .signUpMarketingTab {
-  font-family: Helvetica;
+  font-family: myriadPro;
   color: #DDDDDD;
   font-size: 1.2em;
   line-height: 1.45em;
+  // max-width: 75%;
 }
 
 // .emailSignUp:before, .emailSignUp:after {

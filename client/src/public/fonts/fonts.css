@@ -2,5 +2,19 @@
   font-family: 'leagueGothic';
   font-weight: normal;
   font-style: normal;
-  style: url('./League_Gothic.otf');
+  src: url('./League_Gothic.otf');
+}
+
+@font-face {
+	font-family: 'myriadPro';
+	font-weight: normal;
+	font-style: normal;
+	src: url('./Myriad_Pro.otf');
+}
+
+@font-face {
+  font-family: 'myriadProLight';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./Myriad_Pro_Light.otf');
 }
