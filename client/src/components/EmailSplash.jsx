@@ -22,9 +22,8 @@ const getBackgroundStyle = (opacity) => {
 let cardStyle = {
   // 'boxShadow': getBackgroundStyle('.2') + ' 100px 1px 6px',
   'boxShadow': '3px 3px 20px 1px rgba(255,255,255,.8)',
-  'borderRadius': '.8em',
-  'width': '60%',
-  'overflow': 'hidden'
+  'borderRadius': '.8em'
+  // 'overflow': 'hidden'
 }
 
 let flexStyle = {
@@ -66,68 +65,98 @@ class EmailSplash extends Component {
     let marginStyle = marginGenerator('-62px', 'auto', null, 'auto')
     return (
       <div className="splashBackground" style={flexStyle}>
-        <Card className="emailSignUp" style={cardStyle}>
-          <CardMedia overlay={<CardTitle title={
-              (<div>
-                  <img style={
-                      {"maxHeight": "75px", "display": "block", ...marginStyle}
-                  } src="/assets/cashgroundsTakeFour.png">
-                  </img>
-                  <span className="signupBrandName yellowText">CASHGROUNDS</span>
-          </div>)} subtitle={(<div className="row"><span className="col-sm-offset-1 col-sm-10">{copy.subtitle.alternate}</span></div>)} subtitleStyle={{"font-family": "myriadPro", "fontSize": ".7em"}}/>}>
-            <img className="signupHeaderImg" src="/assets/pubgSplash.jpg"></img>
-          </CardMedia>
-          <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "padding-bottom":"0px"}}>
-            <div className="col-xs-12 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8 signUpMarketingTab">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
-              <div className="row">
-                <ul className="col-xs-offset-1 col-xs-11" style={{"text-align":"left"}}>
-                  <br></br>
-                  <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
-                  </li>
-                  <li>
-                  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </li>
-                </ul>
+        <div className="row">
+          <Card className="col-xs-offset-1 col-xs-10 emailCard" style={{...cardStyle}}
+            containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"hidden"}}
+            >
+            <CardMedia
+              overlay={
+                <CardTitle title={
+                (<div>
+                    <img style={
+                        {"maxHeight": "75px", "display": "block", ...marginStyle}
+                    } src="/assets/cashgroundsTakeFour.png">
+                    </img>
+                    <span className="signupBrandName yellowText">CASHGROUNDS</span>
+                    </div>)}
+                subtitle={(
+                  <div className="row">
+                    <span
+                    className="col-sm-offset-1 col-sm-10 ">{copy.subtitle.alternate}</span>
+                  </div>)}
+                subtitleStyle={{"font-family": "myriadPro", "fontSize": ".7em"}}/>}
+                style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
+                mediaStyle={{"height":"100%", "width":"100%"}}
+                className="emailCardMedia">
+                <div className="signupHeaderImg"></div>
+            </CardMedia>
+            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "padding-bottom":"0px", "height":"33%", "overflow":"hidden"}}>
+              <div className="col-xs-12 col-lg-offset-1 col-lg-10 col-xl-offset-2 col-xl-8 signUpMarketingTab">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue risus, scelerisque sit amet tortor ut, egestas accumsan metus. Nam consectetur porttitor vestibulum. Maecenas sit amet eros tortor. Nulla et pretium diam, non pharetra diam. Sed scelerisque congue lorem.</p>
+                <div className="row">
+                  <ul className="col-xs-offset-1 col-xs-11" style={{"text-align":"left", }}>
+                    <br></br>
+                    <li>Etiam vitae eros vitae tellus suscipit egestas non nec turpis.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                    <li>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>  
-          </CardText>
-          <CardText style={paddingGenerator('0px', '0px', '0px', '0px')}>
-            <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+            </CardText>
+            <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"33%"}}>
+              <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
-              <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
+                <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
-                <div className="col-xs-6">
-                  <TextField
-                  hintText="email"
-                  floatingLabelText="email address"
-                  type="email"
-                  autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
-                  /><br />
+                  <div className="col-xs-6">
+                    <TextField
+                    hintText="email"
+                    floatingLabelText="email address"
+                    type="email"
+                    autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
+                    /><br />
+                  </div>
+
+                  <div className="col-xs-6">
+                    <TextField
+                      hintText="what do you go by?"
+                      floatingLabelText="gamer name"
+                      name="GAMERNAME"
+                      type="text"
+                    /><br />
+                  </div>
+
                 </div>
 
-                <div className="col-xs-6">
-                  <TextField
-                    hintText="what do you go by?"
-                    floatingLabelText="gamer name"
-                    name="GAMERNAME"
-                    type="text"
-                  /><br />
-                </div>
+                <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
+                <input type="hidden" name="id" value="c29285afce"></input>
 
-              </div>
+                <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
 
-              <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
-              <input type="hidden" name="id" value="c29285afce"></input>
+                <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
+                <input type="hidden" name="mc_signupsource" value="hosted"></input>
 
-              <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
-
-              <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
-              <input type="hidden" name="mc_signupsource" value="hosted"></input>
-
-            </form>
-          </CardText>
-      </Card>
+              </form>
+            </CardText>
+        </Card>
+      </div>
     </div>
     );
  }
