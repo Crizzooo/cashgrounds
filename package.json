@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "webpack --config webpack.dev.config.js -w  & nodemon server/index.js --watch server",
-    "start-prod": "NODE_ENV=production && echo 'rebuilding node-sass' && npm rebuild node-sass --force && webpack -p --config ./webpack.prod.config.js --progress && node server/index.js",
+    "start-prod": "webpack -p --config ./webpack.prod.config.js --progress && node server/index.js",
     "heroku-postbuild": "npm run start-prod"
   },
   "engines": {
