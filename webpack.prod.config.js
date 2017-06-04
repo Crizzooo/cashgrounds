@@ -1,5 +1,4 @@
 var path = require('path');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   entry: './client/src/index.js',
@@ -38,7 +37,5 @@ module.exports = {
     }
   ]
   },
-  plugins: [
-    new LiveReloadPlugin({appendScriptTag: true})
-  ]
+  plugins: []
 };
