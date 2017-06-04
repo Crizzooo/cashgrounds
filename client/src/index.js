@@ -21,11 +21,11 @@ const muiTheme = getMuiTheme({
     //primary2, primary3, accent1,2,3, borderColor
     'textColor': 'silver',
     'alternateTextColor': 'white',
-    'disabledColor': '#303333',
-    'borderColor': 'gold'
+    'disabledColor': '#676666',
+    'borderColor': '#F7F459'
   },
   'raisedButton': {
-    'primaryTextColor': '#111111'
+    'primaryTextColor': '#111'
   }
 });
 console.log('muiTheme: ', muiTheme);
