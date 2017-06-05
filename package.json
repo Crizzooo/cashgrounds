@@ -7,7 +7,7 @@
   "description": "a boilerplate for react, redux, & express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha ./tests --compilers js:babel-core/register",
     "start-dev": "webpack --config webpack.dev.config.js -w  & nodemon server/index.js --watch server",
     "start-prod": "node server/index.js",
     "postinstall": "npm rebuild node-sass",
