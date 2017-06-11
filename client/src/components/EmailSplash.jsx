@@ -59,7 +59,7 @@ class EmailSplash extends Component {
     console.log('changiing..');
     console.log(evt.target.value);
   }
-
+  
   render() {
     let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
     return (
