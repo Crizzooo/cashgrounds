@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
-//load components
-import EmailSplash from './components/EmailSplash';
-
-const App = () => (
+const App = (props) => (
   <div className="background">
-    <EmailSplash />
-  </div>
+   { props.children }
+ </div>
 );
 
 export default App;
