@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-const App = (props) => (
-  <div className="background">
-   { props.children }
- </div>
+import { EmailSplash } from './components/EmailSplash';
+import { Dashboard } from './components/Dashboard';
+
+const App = (props) => {
+    console.log('rendering app:' , props);
+    return (
+    <div className="splashBackground">
+        { props.children }
+    </div>
 );
+};
 
 export default App;
+
+// <Switch>
+//   <Route path="/email" component={EmailSplash} />
+//   <Route path="/dashboard" component={Dashboard} />
+// </Switch>
 
 
 

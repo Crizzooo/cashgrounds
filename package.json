@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "babel-register": "^6.24.1",
+    "webpack": "^2.1.0-beta.8",
     "webpack-livereload-plugin": "^0.11.0"
   }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -10,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from './store.js';
 import App from './app.js';
 import EmailSplash from './components/EmailSplash';
+import Dashboard from './components/Dashboard';
 
 //load main css
 import './public/stylesheets/index.scss';
@@ -46,14 +46,18 @@ const muiTheme = getMuiTheme({
     },
 */
 ReactDOM.render(
-  (<Provider store={store} >
-    <BrowserRouter>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <App>
+  (<BrowserRouter>
+  <Provider store={store} >
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <div className="splashBackground">
+        <Route path="/" >
+          <Switch>
             <Route exact path="/" component={EmailSplash} />
-            <Route path="/tournaments" component={App} />
-        </App>
-      </MuiThemeProvider>
-    </BrowserRouter>
-  </Provider>),
+            <Route path="/dashboard" component={Dashboard}/>
+           </Switch>
+        </Route>
+      </div>
+    </MuiThemeProvider>
+  </Provider>
+</BrowserRouter>),
   document.getElementById('app'));
