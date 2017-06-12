@@ -5,7 +5,6 @@ import { EmailSplash } from './components/EmailSplash';
 import { Dashboard } from './components/Dashboard';
 
 const App = (props) => {
-    console.log('rendering app:' , props);
     return (
     <div className="splashBackground">
         { props.children }

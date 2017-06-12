@@ -61,7 +61,6 @@ class EmailSplash extends Component {
   }
 
   render() {
-    console.log('did this log?');
     let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
     return (
       <div className="" style={flexStyle}>
