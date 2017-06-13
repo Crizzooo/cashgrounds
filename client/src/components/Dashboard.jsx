@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import UserBar from './UserBar.jsx';
+import Navbar from './Navbar.jsx';
 
 import './DashboardStyle.scss';
 
@@ -21,12 +22,15 @@ class Dashboard extends Component {
     console.log('in dashboard');
     return (
       <div style={{"height": "100%", "width":"100%"}}>
-        <div className="dashboardContainer">
-          <div className="dashboard">
-            { this.props.children }
+        <div style={{"height": "100%", "width":"100%"}}>
+          <Navbar />
+          <div className="dashboardContainer">
+            <div className="dashboard">
+              { this.props.children }
+            </div>
           </div>
+          <UserBar />
         </div>
-        <UserBar />
       </div>
     );
   }

@@ -10,7 +10,7 @@ class DashboardCard extends Component {
 
   render() {
     return (
-      <div className="col-xs-12 col-md-6 dashboardHolder">
+      <div className="col-xs-12 col-sm-6 dashboardHolder">
         <div className="dashboardCard">
           <p>i am a card</p>
         </div>

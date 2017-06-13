@@ -18,8 +18,8 @@ class DashboardHome extends Component {
   render() {
     console.log('in dashboard');
     return (
-        <div className="row center-xs">
-          { [1, 2, 3, 4, 5, 6].map( elem => <DashboardCard />) }
+        <div className="row center-xs around-xs">
+          { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map( elem => <DashboardCard />) }
         </div>
     );
   }

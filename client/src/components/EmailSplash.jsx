@@ -66,7 +66,7 @@ class EmailSplash extends Component {
       <div className="" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
           <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
-            containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"hidden"}}
+            containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
             >
             <CardMedia
               overlay={

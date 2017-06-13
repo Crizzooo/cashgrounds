@@ -5,16 +5,10 @@ $userBarWidth: 50%;
   width: 100%;
 }
 
-.dashboardContainer {
-  height: 100%;
-  width: 100%;
-  padding: 5%;
-}
-
 .dashboard {
   background-color: rgba(100, 100, 100, 0.2);
   width: 100%;
-  height: 100%;
+  height: 75%;
   overflow: scroll;
 }
 
@@ -41,7 +35,14 @@ $userBarWidth: 50%;
   height: 100%;
   width: 80%;
   margin: 0px 10%;
-  padding: 5%;
+  @media (max-width: 1224px) {
+    width: 90%;
+    margin: 0px 5%;
+  }
+  @media (max-width: 768px) {
+    margin: 0px 0px;
+    width: 100%;
+  }
 }
 .dashboardHolder {
   height: 24%;
