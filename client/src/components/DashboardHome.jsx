@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import UserBar from './UserBar.jsx';
+import DashboardCard from './DashboardCard.jsx'
 
-import './DashboardStyle.scss';
-
-class Dashboard extends Component {
+class DashboardHome extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,14 +18,9 @@ class Dashboard extends Component {
   render() {
     console.log('in dashboard');
     return (
-      <div style={{"height": "100%", "width":"100%"}}>
-        <div className="dashboardContainer">
-          <div className="dashboard">
-            { this.props.children }
-          </div>
+        <div className="row center-xs">
+          { [1, 2, 3, 4, 5, 6].map( elem => <DashboardCard />) }
         </div>
-        <UserBar />
-      </div>
     );
   }
 }
@@ -43,4 +36,4 @@ const mapState = state => {
 //   return {};
 // }
 
-export default connect(mapState, null)(Dashboard);
+export default connect(mapState, null)(DashboardHome);

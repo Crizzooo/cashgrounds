@@ -1,0 +1,56 @@
+$userBarWidth: 50%;
+
+.row {
+  height: 100%;
+  width: 100%;
+}
+
+.dashboardContainer {
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+}
+
+.dashboard {
+  background-color: rgba(100, 100, 100, 0.2);
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.userBarContainer {
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: calc( (100% - #{$userBarWidth}) / 2);
+  padding-right: calc( (100% - #{$userBarWidth}) / 2);
+  margin-bottom: 0.5em;
+}
+
+.userBar {
+  min-width: $userBarWidth;
+  // max-width: $userBarWidth;
+  height: 100%;
+  background-color: rgba(123, 164, 226, 0.2);
+  border-radius: 1em;
+}
+
+.dashboardContainer {
+  height: 100%;
+  width: 80%;
+  margin: 0px 10%;
+  padding: 5%;
+}
+.dashboardHolder {
+  height: 24%;
+  padding: 0.5em;
+}
+
+.dashboardCard {
+  height: 100%;
+  width: 100%;
+  background-color: silver;
+  border-radius: 2px;
+}

@@ -10,6 +10,8 @@ import store from './store.js';
 import App from './app.js';
 import EmailSplash from './components/EmailSplash';
 import Dashboard from './components/Dashboard';
+import DashboardHome from './components/DashboardHome';
+import UserBar from './components/UserBar.jsx';
 
 //load main css
 import './public/stylesheets/index.scss';
@@ -51,7 +53,9 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App} >
         <IndexRoute component={EmailSplash} />
-        <Route path="dashboard" component={Dashboard} />
+        <Route path="dashboard" component={Dashboard} >
+          <IndexRoute component={DashboardHome} />
+        </Route>
       </Route>
     </Router>
   </Provider>
