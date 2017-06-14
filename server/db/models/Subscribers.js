@@ -15,4 +15,4 @@ const Subscribers = db.define('Subscribers', {
   },
 })
 
-export default Subscribers;
+module.exports = Subscribers;
