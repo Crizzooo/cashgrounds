@@ -51,13 +51,18 @@ let paddingStyle = paddingGenerator('24px',  null, '16px', null);
 class EmailSplash extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      email: '',
+      gamerName: ''
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(evt) {
-    console.log('changiing..');
+  handleChange(evt, newValue) {
+    console.log('changiing..', evt);
     console.log(evt.target.value);
+    console.log(evt.target.name);
+    this.setState({[evt.target.name]: newValue})
   }
 
   render() {
@@ -129,6 +134,7 @@ class EmailSplash extends Component {
                     type="email"
                     autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
                     style={{"maxWidth": "256px", "width":"100%"}}
+                    onChange={this.handleChange}
                     /><br />
                   </div>
 
@@ -139,6 +145,7 @@ class EmailSplash extends Component {
                       name="GAMERNAME"
                       type="text"
                       style={{"maxWidth": "256px", "width":"100%"}}
+                      onChange={this.handleChange}
                     /><br />
                   </div>
 
