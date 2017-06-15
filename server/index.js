@@ -34,9 +34,10 @@ app.use('/', (err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal Server error.');
 });
 
-let sync = process.env.NODE.ENV === 'Development' ? { force: true} : {};
+let sync = process.env.NODE_ENV === 'development' ? { force: true} : {};
 db.sync(sync)
 .then( () => {
+  if (process.env.NODE_ENV === 'development' ) console.log('get developing, homie')
   console.log('db synced correctly!');
   app.listen(PORT, () => {
     console.log('Server listening on Port: ', PORT);
