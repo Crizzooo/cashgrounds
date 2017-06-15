@@ -3,7 +3,7 @@ const db = require('../index.js');
 
 
 const Subscribers = db.define('Subscribers', {
-  emailAddress: {
+  email: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {

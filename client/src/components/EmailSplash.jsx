@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
@@ -52,18 +53,35 @@ class EmailSplash extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      gamerName: ''
+      EMAIL: '',
+      GAMERNAME: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(evt, newValue) {
-    console.log('changiing..', evt);
-    console.log(evt.target.value);
-    console.log(evt.target.name);
+    console.log(evt.target.name, newValue);
     this.setState({[evt.target.name]: newValue})
+    console.log('delayed state: ', this.state);
   }
+
+  handleSubmit(evt) {
+    evt.preventDefault();
+    console.log('submtting with evt: ', evt.target);
+    console.log('state: ', this.state);
+    axios.post('/api/subscribers', {
+      email: this.state.EMAIL,
+      gamerName: this.state.GAMERNAME
+    })
+    .then( (res) => {
+      console.log('received: ', res);
+    })
+    .catch(console.err) /* To be fixed with error notification */
+  }
+
+  // original mailchimnp form props
+  /*<form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>*/
 
   render() {
     let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
@@ -123,7 +141,7 @@ class EmailSplash extends Component {
               </div>
             </CardText>
             <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
-              <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+              <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>
 
                 <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
