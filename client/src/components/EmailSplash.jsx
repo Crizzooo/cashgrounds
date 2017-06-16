@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import emailValidator from 'email-validator';
 
 import './EmailSplashStyle.scss';
 
@@ -54,34 +55,54 @@ class EmailSplash extends Component {
     super(props);
     this.state = {
       EMAIL: '',
-      GAMERNAME: ''
+      GAMERNAME: '',
+      errors: {
+        email: '',
+        gamerName: ''
+      }
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validateData = this.validateData.bind(this);
   }
 
   handleChange(evt, newValue) {
-    console.log(evt.target.name, newValue);
     this.setState({[evt.target.name]: newValue})
-    console.log('delayed state: ', this.state);
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-    console.log('submtting with evt: ', evt.target);
-    console.log('state: ', this.state);
-    axios.post('/api/subscribers', {
-      email: this.state.EMAIL,
-      gamerName: this.state.GAMERNAME
-    })
-    .then( (res) => {
-      console.log('received: ', res);
-    })
-    .catch(console.err) /* To be fixed with error notification */
+    if(this.validateData()){
+      axios.post('/api/subscribers', {
+        email: this.state.EMAIL,
+        gamerName: this.state.GAMERNAME
+      })
+      .then( (res) => {
+        console.log('received: ', res);
+      })
+      .catch(console.err)
+    }
   }
 
-  // original mailchimnp form props
-  /*<form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>*/
+  validateData(){
+    let errorCount = 0;
+    let errors = {
+      email: '',
+      gamerName: ''
+    }
+    if (!emailValidator.validate(this.state.EMAIL)) {
+      this.setState({errors: Object.assign({}, ...this.state.errors, {email: 'Please enter a valid email address!'})});
+      errorCount++;
+      errors.email = 'Please enter a valid email address!';
+    }
+    if (!this.state.GAMERNAME || this.state.GAMERNAME.length < 1) {
+      this.setState({errors: Object.assign({}, ...this.state.errors, {gamerName: 'Gamer Name is a required field!'})});
+      errorCount++;
+      errors.gamerName = 'Gamer Name is a required field!';
+    }
+    this.setState({errors});
+    return errorCount === 0;
+  }
 
   render() {
     let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
@@ -153,6 +174,8 @@ class EmailSplash extends Component {
                     autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
                     style={{"maxWidth": "256px", "width":"100%"}}
                     onChange={this.handleChange}
+                    required
+                    errorText={this.state.errors.email}
                     /><br />
                   </div>
 
@@ -164,6 +187,7 @@ class EmailSplash extends Component {
                       type="text"
                       style={{"maxWidth": "256px", "width":"100%"}}
                       onChange={this.handleChange}
+                      errorText={this.state.errors.gamerName}
                     /><br />
                   </div>
 
@@ -185,21 +209,9 @@ class EmailSplash extends Component {
     );
  }
 }
-//Ripped out old html
-/*
-          <CardTitle title="cashgrounds" subtitle="outwit. outlast. win cash!" className="signupHeader" style={{...paddingStyle, 'backgroundColor': 'rgba(0, 0, 0, .3)', 'overflow': 'hidden'}} subtitleStyle={marginGenerator('0.75em')}/>
-          */
 
-//RIPPED OUT FROM MAILCHIMP TEMPLAET
-// <div className="input-field">
-//   <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25" type="email" className="validate"></input>
-//   <label htmlFor="MERGE0">Email Address <span className="req asterisk">*</span></label>
-// </div>
 
-// EXAMPLE
 const mapState = state => {
-  // The reducers are combined in reducers/index.js and that is where their name is set
-  // The format is state.REDUCERNAME.propertyOfREDUCERNAME
   return {};
 };
 
@@ -209,84 +221,3 @@ const mapState = state => {
 // }
 
 export default connect(mapState, null)(EmailSplash);
-
-
-// <!-- Begin MailChimp Signup Form -->
-// <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-
-//COMPONENT CODE
-// <div id="mc_embed_signup">
-//   <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
-//     <div id="mc_embed_signup_scroll">
-//     	<label for="mce-EMAIL">Subscribe to our mailing list</label>
-//     	<input type="email" value="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="email address" required>
-//         <div style="position: absolute; left: -5000px;" aria-hidden="true">
-//           <input type="text" name="b_d806631c2c2b68285d31de691_c29285afce" tabindex="-1" value="">
-//         </div>
-//         <div className="clear">
-//           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button">
-//         </div>
-//     </div>
-//   </form>
-// </div>
-//
-// <!--End mc_embed_signup-->
-
-
-
-// <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
-//     <div id="mc_embed_signup_scroll">
-// 	<h2>Subscribe to our mailing list</h2>
-// <div className="indicates-required"><span className="asterisk">*</span> indicates required</div>
-// <div className="mc-field-group">
-// 	<label for="mce-EMAIL">Email Address  <span className="asterisk">*</span>
-// </label>
-// 	<input type="email" value="" name="EMAIL" className="required email" id="mce-EMAIL"></input>
-// </div>
-// <div className="mc-field-group">
-// 	<label htmlForm="mce-GNAME">Gamer Name </label>
-// 	<input type="text" value="" name="GNAME" className="" id="mce-GNAME"></input>
-// </div>
-// 	<div id="mce-responses" className="clear">
-// 		<div className="response" id="mce-error-response" ></div>
-// 		<div className="response" id="mce-success-response" ></div>
-// 	</div>
-//     <div aria-hidden="true"><input type="text" name="b_d806631c2c2b68285d31de691_c29285afce" tabindex="-1" value=""></input></div>
-//     <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button"></input></div>
-//     </div>
-// </form>
-
-
-//MDB Example
-/* return (<div className="row">
-    <form className="col-md-12">
-      <div className="row">
-        <div className="input-field col-md-6">
-          <input placeholder="Placeholder" id="first_name" type="text" className="validate"></input>
-          <label htmlFor="first_name">First Name</label>
-        </div>
-        <div className="input-field col-md-6">
-          <input id="last_name" type="text" className="validate"></input>
-          <label htmlFor="last_name">Last Name</label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="input-field col-md-12">
-          <input disabled value="I am not editable" id="disabled" type="text" className="validate"></input>
-          <label htmlFor="disabled">Disabled</label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="input-field col-md-12">
-          <input id="password" type="password" className="validate"></input>
-          <label htmlFor="password">Password</label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="input-field col-md-12">
-          <input id="email" type="email" className="validate"></input>
-          <label htmlFor="email">Email</label>
-        </div>
-      </div>
-    </form>
-  </div>); */
