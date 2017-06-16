@@ -5,6 +5,10 @@ const bodyParser = require('body-parser');
 
 const db = require('./db');
 
+require('../secrets.js');
+
+
+
 console.log('p.e.port: ', process.env.PORT);
 const PORT = process.env.PORT || 3000;
 
