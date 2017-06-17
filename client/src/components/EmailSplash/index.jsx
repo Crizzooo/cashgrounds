@@ -112,29 +112,6 @@ class EmailSplash extends Component {
         <div className="row" style={{"height":"100%", "width":"100%"}}>
           <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
             containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
-            topSection={(
-              <CardMedia
-                        overlay={
-                          <CardTitle title={
-                          (<div>
-                              <img style={
-                                  {"height": "20%", "maxHeight": "100px", "display": "block", ...marginStyle}
-                              } src="/assets/cashgroundsTakeFour.png">
-                              </img>
-                              <span className="signupBrandName yellowText">CASHGROUNDS</span>
-                              </div>)}
-                          subtitle={(
-                            <div className="row">
-                              <span
-                              className="col-sm-offset-1 col-sm-10 ">{copy.subtitle.alternate}</span>
-                            </div>)}
-                          subtitleStyle={{"fontFamily": "myriadPro", "fontSize": ".7em"}}/>}
-                          style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
-                          mediaStyle={{"height":"100%", "width":"100%"}}
-                          className="emailCardMedia">
-                          <div className="signupHeaderImg"></div>
-                </CardMedia>
-            )}
             midSection={(<CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
               <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
                   <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?

@@ -8,7 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import store from './store.js';
 import App from './app.js';
-import EmailSplash2 from './components/EmailSplash/';
+import EmailSplash from './components/EmailSplash/';
+import ThankYou from './components/EmailSplash/ThankYou';
 import Dashboard from './containers/Dashboard/';
 import DashboardHome from './components/DashboardHome';
 import UserBar from './components/UserBar.jsx';
@@ -52,7 +53,8 @@ ReactDOM.render(
   <Provider store={store} >
     <Router history={browserHistory}>
       <Route path="/" component={App} >
-        <IndexRoute component={EmailSplash2} />
+        <IndexRoute component={EmailSplash} />
+        <Route path="/thankyou" component={ThankYou} />
         <Route path="dashboard" component={Dashboard} >
           <IndexRoute component={DashboardHome} />
         </Route>
