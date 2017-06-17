@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { EmailSplash } from './components/EmailSplash';
-import { Dashboard } from './components/Dashboard';
-
 const App = (props) => {
     return (
     <div className="splashBackground">

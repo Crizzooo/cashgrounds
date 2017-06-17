@@ -5,8 +5,8 @@ import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-
-import './EmailSplashStyle.scss';
+// TODO: Change where this style comes from
+import '../components/EmailSplash/EmailSplashStyle.scss';
 
 import {marginGenerator, paddingGenerator} from '../utils/styleObjGenerators.js';
 

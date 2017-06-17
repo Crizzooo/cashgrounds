@@ -8,9 +8,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import emailValidator from 'email-validator';
 
 import './EmailSplashStyle.scss';
-import ThemedCard from './ThemedCard.jsx';
 
-import {marginGenerator, paddingGenerator} from '../utils/styleObjGenerators.js';
+import {marginGenerator, paddingGenerator} from '../../utils/styleObjGenerators.js';
 
   // let bgColor = '0, 31, 62, ';
 const getBackgroundStyle = (opacity) => {
@@ -110,32 +109,31 @@ class EmailSplash extends Component {
     return (
       <div className="" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
-          <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+          <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
             containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
-            topSection={(
-              <CardMedia
-                        overlay={
-                          <CardTitle title={
-                          (<div>
-                              <img style={
-                                  {"height": "20%", "maxHeight": "100px", "display": "block", ...marginStyle}
-                              } src="/assets/cashgroundsTakeFour.png">
-                              </img>
-                              <span className="signupBrandName yellowText">CASHGROUNDS</span>
-                              </div>)}
-                          subtitle={(
-                            <div className="row">
-                              <span
-                              className="col-sm-offset-1 col-sm-10 ">{copy.subtitle.alternate}</span>
-                            </div>)}
-                          subtitleStyle={{"fontFamily": "myriadPro", "fontSize": ".7em"}}/>}
-                          style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
-                          mediaStyle={{"height":"100%", "width":"100%"}}
-                          className="emailCardMedia">
-                          <div className="signupHeaderImg"></div>
-                </CardMedia>
-            )}
-            midSection={(<CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
+            >
+            <CardMedia
+              overlay={
+                <CardTitle title={
+                (<div>
+                    <img style={
+                        {"height": "20%", "maxHeight": "100px", "display": "block", ...marginStyle}
+                    } src="/assets/cashgroundsTakeFour.png">
+                    </img>
+                    <span className="signupBrandName yellowText">CASHGROUNDS</span>
+                    </div>)}
+                subtitle={(
+                  <div className="row">
+                    <span
+                    className="col-sm-offset-1 col-sm-10 ">{copy.subtitle.alternate}</span>
+                  </div>)}
+                subtitleStyle={{"fontFamily": "myriadPro", "fontSize": ".7em"}}/>}
+                style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
+                mediaStyle={{"height":"100%", "width":"100%"}}
+                className="emailCardMedia">
+                <div className="signupHeaderImg"></div>
+            </CardMedia>
+            <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
               <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
                   <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?
                   If you think you got the nerves of steel necessary to fight the intense stress of competition, betting on yourself will only improve your experience of an already extreme game. The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
@@ -162,53 +160,52 @@ class EmailSplash extends Component {
                   </ul>
                 </div>
               </div>
-            </CardText>)}
-            botSection={(
-              <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
-                <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>
+            </CardText>
+            <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
+              <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>
 
-                  <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
+                <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
-                    <div className="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-3 ">
-                      <TextField
-                      hintText="email"
-                      floatingLabelText="email address"
-                      type="email"
-                      autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
-                      style={{"maxWidth": "256px", "width":"100%"}}
-                      onChange={this.handleChange}
-                      required
-                      errorText={this.state.errors.email}
-                      /><br />
-                    </div>
-
-                    <div className="col-xs-12 col-sm-offset-0 col-sm-5 col-md-offset-2 col-md-3 ">
-                      <TextField
-                        hintText="what do you go by?"
-                        floatingLabelText="gamer name"
-                        name="GAMERNAME"
-                        type="text"
-                        style={{"maxWidth": "256px", "width":"100%"}}
-                        onChange={this.handleChange}
-                        errorText={this.state.errors.gamerName}
-                      /><br />
-                    </div>
-
+                  <div className="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-3 ">
+                    <TextField
+                    hintText="email"
+                    floatingLabelText="email address"
+                    type="email"
+                    autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
+                    style={{"maxWidth": "256px", "width":"100%"}}
+                    onChange={this.handleChange}
+                    required
+                    errorText={this.state.errors.email}
+                    /><br />
                   </div>
 
-                  <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
-                  <input type="hidden" name="id" value="c29285afce"></input>
+                  <div className="col-xs-12 col-sm-offset-0 col-sm-5 col-md-offset-2 col-md-3 ">
+                    <TextField
+                      hintText="what do you go by?"
+                      floatingLabelText="gamer name"
+                      name="GAMERNAME"
+                      type="text"
+                      style={{"maxWidth": "256px", "width":"100%"}}
+                      onChange={this.handleChange}
+                      errorText={this.state.errors.gamerName}
+                    /><br />
+                  </div>
 
-                  <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
+                </div>
 
-                  <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
-                  <input type="hidden" name="mc_signupsource" value="hosted"></input>
+                <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
+                <input type="hidden" name="id" value="c29285afce"></input>
 
-                </form>
-              </CardText>
-            )} />
-        </div>
+                <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
+
+                <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
+                <input type="hidden" name="mc_signupsource" value="hosted"></input>
+
+              </form>
+            </CardText>
+        </Card>
       </div>
+    </div>
     );
  }
 }

@@ -8,8 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import store from './store.js';
 import App from './app.js';
-import EmailSplash2 from './components/EmailSplash2';
-import Dashboard from './components/Dashboard';
+import EmailSplash2 from './components/EmailSplash/';
+import Dashboard from './containers/Dashboard/';
 import DashboardHome from './components/DashboardHome';
 import UserBar from './components/UserBar.jsx';
 

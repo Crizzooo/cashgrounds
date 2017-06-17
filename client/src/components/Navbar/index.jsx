@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { AppBar } from 'material-ui';
 
-import Styles from '../public/stylesheets/colors.js';
+import Styles from '../../public/stylesheets/colors.js';
 import './NavbarStyle.scss';
 
 class Navbar extends Component {
@@ -14,7 +14,6 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log(Styles.main_dark);
     return (
       <div>
           <AppBar
