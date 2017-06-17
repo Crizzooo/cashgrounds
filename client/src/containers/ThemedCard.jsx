@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Anime from 'react-anime';
 
 import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
@@ -68,7 +68,14 @@ export default  function ({ subtitle, topSection, topSubtitle, midSection, botSe
     </CardMedia>);
   }
   return (
-    <div className="" style={flexStyle}>
+    <Anime
+     style={{"padding":"0px","backgroundColor":"pink","margin":"-400px"}}
+     easing="linear"
+     delay={1000}
+     duration={750}
+     opacity={[0,1]}
+     translateY={[-50, 0]}
+     translateX={[-50, 0]}>
       <div className="row" style={{"height":"100%", "width":"100%"}}>
         <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
           containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
@@ -78,6 +85,6 @@ export default  function ({ subtitle, topSection, topSubtitle, midSection, botSe
           {botSection}
         </Card>
     </div>
-  </div>
+  </Anime>
   )
 }

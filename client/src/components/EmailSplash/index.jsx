@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -54,7 +55,7 @@ let paddingStyle = paddingGenerator('24px',  null, '16px', null);
 class EmailSplash extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.unlinkedState = {
       EMAIL: '',
       GAMERNAME: '',
       errors: {
@@ -68,18 +69,21 @@ class EmailSplash extends Component {
   }
 
   handleChange(evt, newValue) {
-    this.setState({[evt.target.name]: newValue})
+    this.unlinkedState[evt.target.name] = newValue;
+    console.log('new unlinked state: ', this.unlinkedState);
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
+    console.log('clicked submit');
     if(this.validateData()){
       axios.post('/api/subscribers', {
-        email: this.state.EMAIL,
-        gamerName: this.state.GAMERNAME
+        email: this.unlinkedState.EMAIL,
+        gamerName: this.unlinkedState.GAMERNAME
       })
       .then( (res) => {
         console.log('received: ', res);
+        browserHistory.push('thankyou');
       })
       .catch(console.err)
     }
@@ -91,17 +95,17 @@ class EmailSplash extends Component {
       email: '',
       gamerName: ''
     }
-    if (!emailValidator.validate(this.state.EMAIL)) {
-      this.setState({errors: Object.assign({}, ...this.state.errors, {email: 'Please enter a valid email address!'})});
+    console.log('validating data: ', this.unlinkedState);
+    if (!emailValidator.validate(this.unlinkedState.EMAIL)) {
       errorCount++;
       errors.email = 'Please enter a valid email address!';
     }
-    if (!this.state.GAMERNAME || this.state.GAMERNAME.length < 1) {
-      this.setState({errors: Object.assign({}, ...this.state.errors, {gamerName: 'Gamer Name is a required field!'})});
+    if (!this.unlinkedState.GAMERNAME || this.unlinkedState.GAMERNAME.length < 1) {
       errorCount++;
       errors.gamerName = 'Gamer Name is a required field!';
     }
-    this.setState({errors});
+    this.unlinkedState.errors = errors;
+    console.log('returning: ', (errorCount === 0) );
     return errorCount === 0;
   }
 
@@ -155,7 +159,7 @@ class EmailSplash extends Component {
                       style={{"maxWidth": "256px", "width":"100%"}}
                       onChange={this.handleChange}
                       required
-                      errorText={this.state.errors.email}
+                      errorText={this.unlinkedState.errors.email}
                       /><br />
                     </div>
 
@@ -167,7 +171,7 @@ class EmailSplash extends Component {
                         type="text"
                         style={{"maxWidth": "256px", "width":"100%"}}
                         onChange={this.handleChange}
-                        errorText={this.state.errors.gamerName}
+                        errorText={this.unlinkedState.errors.gamerName}
                       /><br />
                     </div>
 
