@@ -65,11 +65,16 @@ export default class EmailSplash extends Component {
       },
       signedUp: false
     };
+    this.shouldAnimate = true;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.validateData = this.validateData.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderThankYou = this.renderThankYou.bind(this);
+  }
+
+  componentDidMount() {
+    this.shouldAnimate = false;
   }
 
   handleChange(evt, newValue) {
@@ -111,8 +116,7 @@ export default class EmailSplash extends Component {
   }
 
   render() {
-    let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
-    let cardContents = this.state.signedUp ? this.renderThankYou() : this.renderForm();
+    let marginStyle = marginGenerator('-66px', 'auto', null, 'auto');
     return (
       <div className="" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
@@ -123,8 +127,8 @@ export default class EmailSplash extends Component {
  }
 
 renderForm() {
-  return (
-    <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+  console.log('rednering form: ', this.shouldAnimate);
+  return (<ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
       containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
       midSection={(
         <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
@@ -202,10 +206,9 @@ renderForm() {
 }
 
 renderThankYou(){
-    return (
-      <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+    return (<ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
         containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
-      midSection={(
+        midSection={(
             <div className="whereAmI" style={{"width":"100%"}}>
                   <Anime
                        style={{"width":"100%"}}

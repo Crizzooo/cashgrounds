@@ -41,9 +41,10 @@ const copy = {
   }
 }
 
-export default  function ({ subtitle, topSection, topSubtitle, midSection, botSection}) {
+export default  function ({ subtitle, shouldAnimate, topSection, topSubtitle, midSection, botSection}) {
   let marginStyle = marginGenerator('-66px', 'auto', null, 'auto');
   console.log("received subtitle: ", topSubtitle);
+  console.log('rendering themedcard animate: ', shouldAnimate);
   if (!topSection) {
     topSection = (<CardMedia
       overlay={
@@ -67,24 +68,36 @@ export default  function ({ subtitle, topSection, topSubtitle, midSection, botSe
         <div className="signupHeaderImg"></div>
     </CardMedia>);
   }
-  return (
-    <Anime
-     style={{"padding":"0px","backgroundColor":"pink","margin":"-400px"}}
-     easing="linear"
-     delay={1000}
-     duration={750}
-     opacity={[0,1]}
-     translateY={[-50, 0]}
-     translateX={[-50, 0]}>
-      <div className="row" style={{"height":"100%", "width":"100%"}}>
-        <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
-          containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
-          >
-          {topSection}
-          {midSection}
-          {botSection}
-        </Card>
-    </div>
-  </Anime>
-  )
+  if (shouldAnimate) {
+  console.log('returning animate');
+   return (<Anime
+       style={{"padding":"0px","backgroundColor":"pink","margin":"-400px"}}
+       easing="linear"
+       delay={1000}
+       duration={750}
+       opacity={[0,1]}
+       translateY={[-50, 0]}
+       translateX={[-50, 0]}>
+        <div className="row" style={{"height":"100%", "width":"100%"}}>
+          <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+            containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
+            >
+            {topSection}
+            {midSection}
+            {botSection}
+          </Card>
+      </div>
+    </Anime>);
+  }  else {
+    console.log('returning no animate:');
+    return  (<div className="row" style={{"height":"100%", "width":"100%"}}>
+      <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+        containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
+        >
+        {topSection}
+        {midSection}
+        {botSection}
+      </Card>
+    </div>);
+  }
 }
