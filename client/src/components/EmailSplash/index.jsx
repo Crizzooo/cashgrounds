@@ -116,96 +116,96 @@ export default class EmailSplash extends Component {
     return (
       <div className="" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
-          <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
-            containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
-            {...cardContents}
-             />
+          { this.state.signedUp ? this.renderThankYou() : this.renderForm() }
         </div>
       </div>
     );
  }
 
 renderForm() {
-   return {
-     midSection:
-      (<CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
-     <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
-       <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?
-         If you think you got the nerves of steel necessary to fight the intense stress of competition, betting on yourself will only improve your experience of an already extreme game. The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
-       <div className="row">
-         <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
-           <br></br>
-           <li>Quick, safe, fast transactions using Paypall, Skrilla, or Dwolla
-           </li>
-           <li>
-             Different game modes supporting various playstyles, solo matches, series tournaments, and seasonal leagues!
-           </li>
-           <li>
-             Achievements, awards, and bonuses available for the most competitive players!
-           </li>
-           <li>
-             Perks to early adopters, i.e free squad tournament entries
-           </li>
-           <li>
-             Solo, Duo, Team Play - the ultimate stop for competitive pubg players
-           </li>
-           <li>
-             Different payout scehemes supporting all risk tolerances - prizes rewarding 33x entry fee, some payout so players make their money back as early as the 66th percentile
-           </li>
-         </ul>
-       </div>
-     </div>
-   </CardText>),
- botSection:
-   (<CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
-   <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>
+  return (
+    <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+      containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
+      midSection={(
+        <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
+      <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
+        <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?
+          If you think you got the nerves of steel necessary to fight the intense stress of competition, betting on yourself will only improve your experience of an already extreme game. The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
+        <div className="row">
+          <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
+            <br></br>
+            <li>Quick, safe, fast transactions using Paypall, Skrilla, or Dwolla
+            </li>
+            <li>
+              Different game modes supporting various playstyles, solo matches, series tournaments, and seasonal leagues!
+            </li>
+            <li>
+              Achievements, awards, and bonuses available for the most competitive players!
+            </li>
+            <li>
+              Perks to early adopters, i.e free squad tournament entries
+            </li>
+            <li>
+              Solo, Duo, Team Play - the ultimate stop for competitive pubg players
+            </li>
+            <li>
+              Different payout scehemes supporting all risk tolerances - prizes rewarding 33x entry fee, some payout so players make their money back as early as the 66th percentile
+            </li>
+          </ul>
+        </div>
+      </div>
+    </CardText>)}
+  botSection={(
+    <CardText style={{...paddingGenerator('0px', '0px', '0px', '0px'), "height":"27%"}}>
+      <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" onSubmit={this.handleSubmit}noValidate>
 
-     <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
+        <div className="row" style={{...marginGenerator(null, null, '3em', null)}}>
 
-       <div className="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-3 ">
-         <TextField
-           hintText="email"
-           floatingLabelText="email address"
-           type="email"
-           autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
-           style={{"maxWidth": "256px", "width":"100%"}}
-           onChange={this.handleChange}
-           required
-           errorText={this.state.errors.email}
-           /><br />
-       </div>
+          <div className="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-3 ">
+            <TextField
+              hintText="email"
+              floatingLabelText="email address"
+              type="email"
+              autoCapitalize="off" autoCorrect="off" name="EMAIL" className="validate"
+              style={{"maxWidth": "256px", "width":"100%"}}
+              onChange={this.handleChange}
+              required
+              errorText={this.state.errors.email}
+              /><br />
+          </div>
 
-       <div className="col-xs-12 col-sm-offset-0 col-sm-5 col-md-offset-2 col-md-3 ">
-         <TextField
-           hintText="what do you go by?"
-           floatingLabelText="gamer name"
-           name="GAMERNAME"
-           type="text"
-           style={{"maxWidth": "256px", "width":"100%"}}
-           onChange={this.handleChange}
-           errorText={this.state.errors.gamerName}
-           /><br />
-       </div>
+          <div className="col-xs-12 col-sm-offset-0 col-sm-5 col-md-offset-2 col-md-3 ">
+            <TextField
+              hintText="what do you go by?"
+              floatingLabelText="gamer name"
+              name="GAMERNAME"
+              type="text"
+              style={{"maxWidth": "256px", "width":"100%"}}
+              onChange={this.handleChange}
+              errorText={this.state.errors.gamerName}
+              /><br />
+          </div>
 
-     </div>
+        </div>
 
-     <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
-     <input type="hidden" name="id" value="c29285afce"></input>
+        <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
+        <input type="hidden" name="id" value="c29285afce"></input>
 
-     <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
+        <RaisedButton type="submit" name="submit" value="Subscribe to list" label="Subscribe for Launch Updates" primary={true} style={marginGenerator(null, null, '1em', null)}/>
 
-     <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
-     <input type="hidden" name="mc_signupsource" value="hosted"></input>
+        <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
+        <input type="hidden" name="mc_signupsource" value="hosted"></input>
 
-   </form>
-  </CardText>)
-  }
+      </form>
+    </CardText>)}
+    />)
 }
 
-  renderThankYou(){
-    return {
-      midSection:
-        (
+renderThankYou(){
+    return (
+      <ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
+        containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
+      midSection={(
             <div className="whereAmI" style={{"width":"100%"}}>
                   <Anime
                        style={{"width":"100%"}}
@@ -224,8 +224,7 @@ renderForm() {
                         opacity={[0, 1]}>
                         <h6>We will be in touch shortly</h6>
                     </Anime>
-                </div>
-          )
-    }
-  }
+            </div>)} ></ThemedCard>);
+}
+
 }
