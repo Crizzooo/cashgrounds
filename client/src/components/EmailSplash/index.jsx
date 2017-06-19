@@ -130,6 +130,7 @@ renderForm() {
   console.log('rednering form: ', this.shouldAnimate);
   return (<ThemedCard className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
       containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
+      shouldAnimate={this.shouldAnimate}
       midSection={(
         <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
       <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
