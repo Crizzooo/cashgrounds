@@ -56,7 +56,7 @@ let paddingStyle = paddingGenerator('24px',  null, '16px', null);
 export default class EmailSplash extends Component {
   constructor(props) {
     super(props);
-    this.unlinkedState = {
+    this.state = {
       EMAIL: '',
       GAMERNAME: '',
       errors: {
@@ -73,20 +73,19 @@ export default class EmailSplash extends Component {
   }
 
   handleChange(evt, newValue) {
-    this.unlinkedState[evt.target.name] = newValue;
+    this.setState({[evt.target.name]: newValue});
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
     if(this.validateData()){
       axios.post('/api/subscribers', {
-        email: this.unlinkedState.EMAIL,
-        gamerName: this.unlinkedState.GAMERNAME
+        email: this.state.EMAIL,
+        gamerName: this.state.GAMERNAME
       })
       .then( (res) => {
         console.log('received: ', res);
-        this.unlinkedState.signedUp = true;
-        this.forceUpdate();
+        this.setState({signedUp: true})
       })
       .catch(console.err)
     }
@@ -98,22 +97,22 @@ export default class EmailSplash extends Component {
       email: '',
       gamerName: ''
     }
-    console.log('validating data: ', this.unlinkedState);
-    if (!emailValidator.validate(this.unlinkedState.EMAIL)) {
+    console.log('validating data: ', this.state);
+    if (!emailValidator.validate(this.state.EMAIL)) {
       errorCount++;
       errors.email = 'Please enter a valid email address!';
     }
-    if (!this.unlinkedState.GAMERNAME || this.unlinkedState.GAMERNAME.length < 1) {
+    if (!this.state.GAMERNAME || this.state.GAMERNAME.length < 1) {
       errorCount++;
       errors.gamerName = 'Gamer Name is a required field!';
     }
-    this.unlinkedState.errors = errors;
+    this.setState({errors});
     return errorCount === 0;
   }
 
   render() {
     let marginStyle = marginGenerator('-66px', 'auto', null, 'auto')
-    let cardContents = this.unlinkedState.signedUp ? this.renderThankYou() : this.renderForm();
+    let cardContents = this.state.signedUp ? this.renderThankYou() : this.renderForm();
     return (
       <div className="" style={flexStyle}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
@@ -172,7 +171,7 @@ renderForm() {
            style={{"maxWidth": "256px", "width":"100%"}}
            onChange={this.handleChange}
            required
-           errorText={this.unlinkedState.errors.email}
+           errorText={this.state.errors.email}
            /><br />
        </div>
 
@@ -184,7 +183,7 @@ renderForm() {
            type="text"
            style={{"maxWidth": "256px", "width":"100%"}}
            onChange={this.handleChange}
-           errorText={this.unlinkedState.errors.gamerName}
+           errorText={this.state.errors.gamerName}
            /><br />
        </div>
 
