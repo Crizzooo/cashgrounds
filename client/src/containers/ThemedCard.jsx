@@ -59,7 +59,7 @@ export default  function ({ subtitle, shouldAnimate, topSection, topSubtitle, mi
         subtitle={topSubtitle !== 'null' ? (
           <div className="row">
             <span
-            className="col-sm-offset-1 col-sm-10 ">{topSubtitle || copy.subtitle.alternate}</span>
+            className="col-sm-offset-1 col-sm-10 cardHeader">{topSubtitle || copy.subtitle.alternate}</span>
         </div>) : null}
         subtitleStyle={{"fontFamily": "myriadPro", "fontSize": ".7em"}}/>}
         style={{"height":"33%", "overflow":"hidden", "contain": "content"}}
