@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const db = require('./db');
 
-require('../secrets.js');
+if (process.env.NODE_ENV === 'development') require('../secrets.js');
 
 
 

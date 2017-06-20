@@ -14,6 +14,7 @@ const axios = require('axios');
 
 
 function subscribingUserToMailChimp(email, gamerName){
+  console.log('using process.env.MAILCHIMP_CLIENT_ID', process.env.MAILCHIMP_CLIENT_ID);
   return axios.post('https://us15.api.mailchimp.com/3.0/lists/c29285afce/members',
       {
       email_address: email,
