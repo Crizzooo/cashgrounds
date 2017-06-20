@@ -11,7 +11,7 @@ $emailSignUp-height: 45vh;
   // padding-left: calc( (100vw - #{$emailSignUp-width}) / 2);
   // padding-top: calc( (100vh - #{$emailSignUp-height}) / 2);
   color: white;
-  background-image: linear-gradient(to bottom right, rgba(14, 19, 22, 0.7), rgba(3, 3, 3, 0.6)), url('/assets/metalTile.jpg');
+  background-image: linear-gradient(to bottom right, rgba(14, 19, 22, 0.5), rgba(3, 3, 3, 0.3)), url('/assets/metalTile.jpg');
   overflow: hidden;
 }
 
@@ -38,9 +38,6 @@ $emailSignUp-height: 45vh;
 }
 
 @media (max-width: 767px) {
-  .splashBackground {
-    padding: 3%;
-  }
   .emailCard {
     margin-top: 0;
     height: 100%;

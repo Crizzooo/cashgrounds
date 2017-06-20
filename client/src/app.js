@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-//load components
-import EmailSplash from './components/EmailSplash';
-
-const App = () => (
-  <div className="background">
-    <EmailSplash />
-  </div>
+const App = (props) => {
+    return (
+    <div className="splashBackground">
+        { props.children }
+    </div>
 );
+};
 
 export default App;
+
+// <Switch>
+//   <Route path="/email" component={EmailSplash} />
+//   <Route path="/dashboard" component={Dashboard} />
+// </Switch>
 
 
 
