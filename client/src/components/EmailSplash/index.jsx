@@ -92,6 +92,8 @@ export default class EmailSplash extends Component {
         console.log('received: ', res);
         this.setState({signedUp: true})
       })
+      //TODO: Render an error message if it does not successfully post
+      //TODO: Handle various Mail Chimp errors 
       .catch(console.err)
     }
   }
