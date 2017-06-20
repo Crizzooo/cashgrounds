@@ -134,8 +134,8 @@ renderForm() {
       midSection={(
         <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
       <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
-        <p>PLAYERUNKNOWN’s BATTLEGROUNDS is the epitome of competitive gaming. Being alone on a huge map, fighting to the death against 100 strangers from every corner of the continent? Every player is already pumping energy into getting a chicken dinner. What if the reward instead was real money?
-          If you think you got the nerves of steel necessary to fight the intense stress of competition, betting on yourself will only improve your experience of an already extreme game. The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
+        <p>PLAYERUNKNOWN’s BATTLEGROUNDS creates a thrilling, intense experience for it's players. Cashgrounds is a platform that enables you to up the stakes, and heighten that intensity by playing for cash. You thought your heart was racing the first time you made it to the top 10? Wait til you experience being a couple kills away from receiving 30x your cash buy in.
+        The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
         <div className="row">
           <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
             <br></br>
@@ -154,7 +154,7 @@ renderForm() {
               Solo, Duo, Team Play - the ultimate stop for competitive pubg players
             </li>
             <li>
-              Different payout scehemes supporting all risk tolerances - prizes rewarding 33x entry fee, some payout so players make their money back as early as the 66th percentile
+              Different payout scehemes support all risk tolerances - Higher Risk games can pay out up to 33x your bet but only cover the top 20 players, while Lower Risk games can allow players to be paid out as deep as the top 66 places for lesser multiples.
             </li>
           </ul>
         </div>
