@@ -93,7 +93,7 @@ export default class EmailSplash extends Component {
         this.setState({signedUp: true})
       })
       //TODO: Render an error message if it does not successfully post
-      //TODO: Handle various Mail Chimp errors 
+      //TODO: Handle various Mail Chimp errors
       .catch(console.err)
     }
   }
@@ -136,12 +136,12 @@ renderForm() {
       midSection={(
         <CardText style={{"backgroundColor":"#111111", "textAlign":"center", "paddingBottom":"0px", "height":"39%", "overflow":"hidden"}}>
       <div className="col-xs-12 col-lg-offset-2 col-lg-8 signUpMarketingTab">
-        <p>PLAYERUNKNOWN’s BATTLEGROUNDS creates a thrilling, intense experience for it's players. Cashgrounds is a platform that enables you to up the stakes, and heighten that intensity by playing for cash. You thought your heart was racing the first time you made it to the top 10? Wait til you experience being a couple kills away from receiving 30x your cash buy in.
-        The motivation? Real rewards. Create a real sensation of SURVIVAL, your victory depends on you.</p>
+        <p> Cashgrounds is a platform that enables you to up the stakes, and heighten that intensity by playing for cash. <br></br> <br></br>Users who sign up for Email Updates below will receive deposit bonuses, promotions, and the ability to give input during our development process! </p>
         <div className="row">
           <ul className="col-xs-offset-1 col-xs-11 col-lg-10" style={{"textAlign":"left", }}>
             <br></br>
-            <li>Quick, safe, fast transactions using Paypall, Skrilla, or Dwolla
+            <li>
+              Quick, safe, fast transactions using Paypal, Skrill, or Dwolla
             </li>
             <li>
               Different game modes supporting various playstyles, solo matches, series tournaments, and seasonal leagues!

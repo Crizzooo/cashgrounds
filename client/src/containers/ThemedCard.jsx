@@ -74,10 +74,11 @@ export default  function ({ subtitle, shouldAnimate, topSection, topSubtitle, mi
        style={{"padding":"0px","backgroundColor":"pink","margin":"-400px"}}
        easing="linear"
        delay={1000}
-       duration={750}
+       duration={5000}
        opacity={[0,1]}
-       translateY={[-50, 0]}
-       translateX={[-50, 0]}>
+       easing="easeInOutBack"
+       translateY={[-1050, 0]}
+       translateX={[-1050, 0]}>
         <div className="row" style={{"height":"100%", "width":"100%"}}>
           <Card className="col-xs-12 col-sm-offset-1 col-sm-10 emailCard" style={{...cardStyle}}
             containerStyle={{"height":"100%", "padding":"0px", "width":"100%", "overflow":"scroll"}}
