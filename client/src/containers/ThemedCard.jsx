@@ -6,7 +6,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 // TODO: Change where this style comes from
-import '../components/EmailSplash/EmailSplashStyle.scss';
+import '../components/EmailSplash/EmailSplashStyle.css';
 
 import {marginGenerator, paddingGenerator} from '../utils/styleObjGenerators.js';
 

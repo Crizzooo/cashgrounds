@@ -9,7 +9,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import emailValidator from 'email-validator';
 
-import './EmailSplashStyle.scss';
+import './EmailSplashStyle.css';
 import ThemedCard from '../../containers/ThemedCard.jsx';
 import {marginGenerator, paddingGenerator} from '../../utils/styleObjGenerators.js';
 

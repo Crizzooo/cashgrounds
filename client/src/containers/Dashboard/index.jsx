@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import UserBar from '../../components/UserBar';
 import Navbar from '../../components/Navbar/';
 
-import './DashboardStyle.scss';
+import './DashboardStyle.css';
 
 export default (props) => {
 

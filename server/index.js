@@ -3,9 +3,9 @@ const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 
-const db = require('./db');
+// const db = require('./db');
 
-if (process.env.NODE_ENV === 'development') require('../secrets.js');
+// if (process.env.NODE_ENV === 'development') require('../secrets.js');
 
 
 
@@ -38,16 +38,16 @@ app.use('/', (err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal Server error.');
 });
 
-let sync = process.env.NODE_ENV === 'development' ? { force: true} : {};
-db.sync(sync)
-.then( () => {
-  if (process.env.NODE_ENV === 'development' ) console.log('get developing, homie')
-  console.log('db synced correctly!');
+// let sync = process.env.NODE_ENV === 'development' ? { force: true} : {};
+// db.sync(sync)
+// .then( () => {
+//   if (process.env.NODE_ENV === 'development' ) console.log('get developing, homie')
+//   console.log('db synced correctly!');
   app.listen(PORT, () => {
     console.log('Server listening on Port: ', PORT);
   });
-})
-.catch( (err) => {
-  console.log('could not sync db!');
-  console.log(err);
-});
+// })
+// .catch( (err) => {
+//   console.log('could not sync db!');
+//   console.log(err);
+// });

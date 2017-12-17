@@ -14,7 +14,7 @@ import DashboardHome from './components/DashboardHome';
 import UserBar from './components/UserBar.jsx';
 
 //load main css
-import './public/stylesheets/index.scss';
+import './public/stylesheets/index.css';
 import 'flexboxgrid';
 
 injectTapEventPlugin();

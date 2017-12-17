@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { AppBar } from 'material-ui';
 
 import Styles from '../../public/stylesheets/colors.js';
-import './NavbarStyle.scss';
+import './NavbarStyle.css';
 
 class Navbar extends Component {
   constructor(props) {

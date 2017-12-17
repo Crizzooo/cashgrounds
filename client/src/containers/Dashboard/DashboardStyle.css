@@ -1,5 +1,3 @@
-$userBarWidth: 50%;
-
 .row {
   height: 100%;
   width: 100%;
@@ -24,7 +22,7 @@ $userBarWidth: 50%;
 }
 
 .userBar {
-  min-width: $userBarWidth;
+  min-width: 50%;
   // max-width: $userBarWidth;
   height: 100%;
   background-color: rgba(123, 164, 226, 0.2);

@@ -22,21 +22,36 @@ module.exports = {
         presets: ['react', 'es2015', 'stage-1']
       }
     },
+    // {
+    //   test: /\.css$/,
+    //   loader: 'style!css!postcss',
+    //   include: path.join(__dirname, '../node_modules'), // oops, this also includes flexboxgrid
+    //   exclude: /flexboxgrid/, // so we have to exclude it
+    // },
     {
-      test: /\.scss$/,
+      test: /\.css$/,
       use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
+        'style-loader', 'css-loader'
+      ],
+      exclude: /flexboxgrid/
     },
     {
       test: /\.css$/,
+      loader: 'style-loader!css-loader?modules',
       include: /flexboxgrid/,
-      use: [
-        'css-loader'
-      ]
-    }
+    },
+    // "postcss" loader applies autoprefixer to our CSS.
+    // "css" loader resolves paths in CSS and adds assets as dependencies.
+    // "style" loader turns CSS into JS modules that inject <style> tags.
+    // In production, we use a plugin to extract that CSS to a file, but
+    // in development "style" loader enables hot editing of CSS.
+    // {
+    //   test: /\.css$/,
+    //   use: [
+    //     'style-loader', 'css-loader'
+    //   ],
+    //   exclude: /flexboxgrid/
+    // }
   ]
   },
   plugins: [
