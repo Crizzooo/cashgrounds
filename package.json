@@ -4,7 +4,7 @@
   "engines": {
     "node": "7.4.0"
   },
-  "description": "a boilerplate for react, redux, & express",
+  "description": "a decentralized ethereum app for competitive gaming on Player Unknowns Battlegrounds",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests --compilers js:babel-core/register",
@@ -30,7 +30,6 @@
     "material-ui": "^0.18.1",
     "mocha": "^3.4.2",
     "mysql": "^2.13.0",
-    "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
     "pg": "^6.3.1",
     "react": "^15.5.4",

@@ -1,5 +1,4 @@
 var path = require('path');
-//
 
 module.exports = {
   entry: './client/src/index.js',
@@ -22,19 +21,16 @@ module.exports = {
       }
     },
     {
-      test: /\.scss$/,
+      test: /\.css$/,
       use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
+        'style-loader', 'css-loader'
+      ],
+      exclude: /flexboxgrid/
     },
     {
       test: /\.css$/,
+      loader: 'style-loader!css-loader?modules',
       include: /flexboxgrid/,
-      use: [
-        'css-loader'
-      ]
     }
   ]
   },
