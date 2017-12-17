@@ -90,6 +90,8 @@ export default class EmailSplash extends Component {
       })
       .then( (res) => {
         console.log('received: ', res);
+
+        // NOTE: If the member exists already and we get an error from mailchimp, we push the user forward anyway
         this.setState({signedUp: true})
       })
       //TODO: Render an error message if it does not successfully post
